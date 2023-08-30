@@ -34,7 +34,7 @@ def equilibrio(c1: List[float], c2: List[float]) -> object:
             fixo=c2[1]
             )
         )
-        
-        plt.plot(eixoX, valor1, valor2)
+
+        return [eixoX, valor1, valor2]
 
 
