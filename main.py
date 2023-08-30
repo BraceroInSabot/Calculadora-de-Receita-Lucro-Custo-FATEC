@@ -1,10 +1,26 @@
-import matplotlib.pyplot as plt
-from processamento.calculos import equilibrio
+import tkinter
+from matplotlib.backends.backend_tkagg import (
+    FigureCanvasTkAgg, NavigationToolbar2Tk)
+from matplotlib.figure import Figure
+from processamento.calculos import Function, equilibrioDeDuasFuncoes
 
-plt.margins(x=0, y=0, tight=True)
-plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
+x = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=15, fixo=1400), caso2=Function(acrescentador=5, fixo=2000))[0]
+y1 = equilibrioDeDuasFuncoes(caso1=Function(15, 1400), caso2=Function(5, 2000))[1]
+y2 = equilibrioDeDuasFuncoes(caso1=Function(15, 1400), caso2=Function(5, 2000))[2]
 
-def exercicios() -> bool:
-    equilibrio(c1=[15, 1400], c2=[5, 2000])
+print(y1, type(y1), y2, type(y2))
 
-exercicios()
+root = tkinter.Tk()
+root.wm_title("Calculator")
+
+figure = Figure(figsize=(5,4), dpi=100)
+ax = figure.add_subplot()
+ax.margins(x=0, y=0, tight=True)
+ax.plot(x, y1, y2)
+
+canvas = FigureCanvasTkAgg(figure, master=root)  # A tk.DrawingArea.
+canvas.draw()
+
+canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=True)
+
+tkinter.mainloop()
