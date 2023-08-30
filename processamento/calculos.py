@@ -1,3 +1,4 @@
+
 #calculo = lambda acrescentador, variavel, fixo: acrescentador*variavel + fixo
 
 class Function():
@@ -30,5 +31,6 @@ def equilibrioDeDuasFuncoes(caso1: Function, caso2: Function) -> object:
         valor2.append(float(caso2.calculo(variavel=contador)))
 
     return (eixoX, valor1, valor2)
+
 
 
