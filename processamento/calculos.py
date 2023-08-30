@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
-
 from typing import List
 
 calculo = lambda acrescentador, variavel, fixo: acrescentador*variavel + fixo
+
 
 def equilibrio(c1: List[float], c2: List[float]) -> object:
   """
@@ -16,6 +16,8 @@ def equilibrio(c1: List[float], c2: List[float]) -> object:
   contador: int = 0
   valor1, valor2 = [c1[1]], [c2[1]]
   eixoX: List[float] = [0]
+
+  
 
   while (contador != 100):
     contador+=1
@@ -40,6 +42,6 @@ def equilibrio(c1: List[float], c2: List[float]) -> object:
   print(valor1)
   print(valor2)
   """
-  plt.plot(eixoX, valor1, valor2)
+  plt.plot(eixoX, valor1, valor2, title="Ponto de Equilibro")
 
 
