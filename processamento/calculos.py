@@ -1,6 +1,3 @@
-
-#calculo = lambda acrescentador, variavel, fixo: acrescentador*variavel + fixo
-
 class Function():
     def __init__(self, acrescentador: float, fixo: float = 0):
         self.a = acrescentador
