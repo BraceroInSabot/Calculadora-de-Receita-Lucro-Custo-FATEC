@@ -10,33 +10,34 @@ main_canva = Canvas(root)
 main_canva.pack(side=TOP, fill=BOTH, expand=1)
 
 atividade = Frame(root)
-"""def canvaConfig(): 
-    scrollbar = Scrollbar(main_canva, orient=VERTICAL, command=main_canva.yview)
-    scrollbar.pack(side=RIGHT, fill=Y)
 
-    main_canva.configure(yscrollcommand=scrollbar.register, scrollregion=main_canva.bbox("all"))
-    # main_canva.bind("<Configure>", lambda event: main_canva.configure(scrollregion=main_canva.bbox("all")))
 
-    return root"""
+def canvaDraw(figure: object) -> object:
+    """
+    Retorna um gráfico desenhado em um Frame do Tkinter
 
-def canvaDraw(figure):
-    canvas = FigureCanvasTkAgg(figure, master=main_canva)  # A tk.DrawingArea.
+    :param:
+    figure: Figure -> figura de um gráfico gerada pelo Matplotlib
+    """
+    canvas = FigureCanvasTkAgg(figure, master=main_canva)
     canvas.draw()
 
 
     return canvas
 
-def atividadeLabel(label, canvas, dimension):
-    label.grid(row=dimension[0], column=dimension[1], pady=2)
+def atividadeLabel(canvas: object, dimension: object) -> object:
+    """
+    Retorna o um frame posicionado na tela do executavel
+
+    :param:
+    canvas: object -> Gráfico armazenado em uma figura
+    """
     canvas.get_tk_widget().grid(row=dimension[0], column=dimension[1], pady=2)
 
     return atividade
 
-def repostasLabel(label, label_atividade):
-    label.pack()
-    label_atividade.pack()
-
-    return 1
-
 def loopCanva():
+    """
+    Retorna valor nulo, necessário para o funcionamento do Tkinter
+    """
     root.mainloop()

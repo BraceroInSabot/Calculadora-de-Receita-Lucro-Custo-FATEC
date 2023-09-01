@@ -1,6 +1,10 @@
 from canva.canva import *
 
 def respostaDasAtividades():
+    """
+    Contém respostas analisando o comportamento dos gráficos e indica a atitude necessário conforme os dados
+    passados
+    """
     resposta = """ATIVIDADE 1: O aluguel mensal do carro da Agência A compensa somente se fossemos andar menos de 60km\n
 com o carro, a partir disso, compensa alugar o carro da Agência B.
 \n\n

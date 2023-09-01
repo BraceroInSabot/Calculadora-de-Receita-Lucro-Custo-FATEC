@@ -4,6 +4,12 @@ class Function():
         self.b = fixo
 
     def calculo(self, variavel: float = 0) -> float:
+        """
+        Representa o modelo da função de 1º grau
+
+        :param:
+        variavel: float -> Número real que representam um valor variável
+        """
         x = variavel
         posY = self.a*x + self.b
         return posY
@@ -14,8 +20,8 @@ def equilibrioDeDuasFuncoes(caso1: Function, caso2: Function) -> object:
     de primeiro grau.
 
     :param:
-    c1 -> Lista com dois itens contendo: valor acrescentador e valor fixo
-    c2 -> Lista com dois itens contendo: valor acrescentador e valor fixo
+    caso1: Function -> Lista com dois itens contendo: valor acrescentador e valor fixo
+    caso2: Function -> Lista com dois itens contendo: valor acrescentador e valor fixo
     """
     contador: int = 0
     valorY1, valorY2 = [caso1.calculo()], [caso2.calculo()]
@@ -35,7 +41,14 @@ def equilibrioDeDuasFuncoes(caso1: Function, caso2: Function) -> object:
 
     return (eixoX, valorY1, valorY2)
 
-def calcularLucro(receita: Function, custo: Function):
+def calcularLucro(receita: Function, custo: Function) -> tuple:
+    """
+    Realiza cálculos para chegar ao lucro do negócio
+
+    :param:
+    receita: Function -> lista com valores ordenados representando a receita de uma empresa
+    custo: Function -> lista com valores ordenados representando o custo de uma empresa
+    """
     contador: int = 0
     eixoX = [0]
 
@@ -53,13 +66,27 @@ def calcularLucro(receita: Function, custo: Function):
 
     return (eixoX, resultado)
 
-def calcXApartirDeY(funcao: Function, yValor: float):
+def calcXApartirDeY(funcao: Function, yValor: float) -> float:
+    """
+    Encontra o valor de X a partir do valor de Y
+
+    :param:
+    yValor: float -> valor de Y
+    funcao: Function -> lista ordenada contendo números reais
+    """
 
     xvalor = (yValor -(funcao.b))/funcao.a
 
     return xvalor
 
-def calcYapartirX(function: Function, valorX: float):
-    valorY = function.calculo(valorX)
+def calcYapartirX(funcao: Function, xValor: float) -> float:
+    """
+    Encontra o valor de Y a partir do valor de X
+
+    :param:
+    xValor: float -> número real variavel
+    funcao: Function -> lista ordenada contendo números reais
+    """
+    valorY = funcao.calculo(xValor)
 
     return valorY
