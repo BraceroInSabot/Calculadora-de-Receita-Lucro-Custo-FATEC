@@ -52,3 +52,14 @@ def calcularLucro(receita: Function, custo: Function):
         resultado.append(float(receita.calculo(variavel=contador) - custo.calculo(variavel=contador)))
 
     return (eixoX, resultado)
+
+def calcXApartirDeY(funcao: Function, yValor: float):
+
+    xvalor = (yValor -(funcao.b))/funcao.a
+
+    return xvalor
+
+def calcYapartirX(function: Function, valorX: float):
+    valorY = function.calculo(valorX)
+
+    return valorY
