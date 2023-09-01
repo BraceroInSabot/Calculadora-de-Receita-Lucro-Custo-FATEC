@@ -3,11 +3,11 @@ from processamento.calculos import Function, equilibrioDeDuasFuncoes, calcularLu
 from matplotlib.figure import Figure
 
 def atividade1():
-    label1 = Label(master=atividade, text="Atividade 1")
-    label1_atividade = Label(master=atividade, text="""
-    Até antes do 60km compensa a empresa A, depois disso compensa comprar da empresa B
-    """)
-
+    """
+    Gera o gráfico do enunciado a seguir: "O aluguel mensal de um carro numa agência é de R$1400,00 mais
+    R$15,00 por km rodado.  Uma segunda agência cobra R$2000,00 mais R$5,00 por km rodado.  Qual agência
+    oferece o melhor plano de aluguel?"
+    """
     x = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=15, fixo=1400), caso2=Function(acrescentador=5, fixo=2000))[0]
     y1 = equilibrioDeDuasFuncoes(caso1=Function(15, fixo=1400), caso2=Function(5, 2000))[1]
     y2 = equilibrioDeDuasFuncoes(caso1=Function(15, fixo=1400), caso2=Function(5, 2000))[2]
@@ -19,16 +19,15 @@ def atividade1():
     ax.legend(["Agência A", "Agência B"])
     ax.set_title("Exercício 1")
 
-    atividadeLabel(label=label1,
-                    canvas=canvaDraw(figure=figure),
-                      dimension=[0, 0]
-                    )
+    atividadeLabel(canvas=canvaDraw(figure=figure),
+                    dimension=[0, 0])
     
 def atividade2():
-    label2 = Label(master=atividade, text="Atividade 2")
-    label2_atividade = Label(master=atividade, text="""
-    Até antes do 60km compensa a empresa A, depois disso compensa comprar da empresa B
-    """)
+    """
+    Gera o gráfico do enunciado a seguir: "Um encanador cobra uma taxa de R$ 35,00 e mais R$ 15,00 a
+    cada hora de trabalho.  Um outro cobra R$ 20,00 e mais R$ 18,00 a cada hora.  Ache um critério
+    para decidir que encanador chamar, se forem levadas em conta apenas considerações de ordem financeiras."
+    """
     x = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=15, fixo=35), caso2=Function(acrescentador=18, fixo=20))[0]
     y1 = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=15, fixo=35), caso2=Function(acrescentador=18, fixo=20))[1]
     y2 = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=15, fixo=35), caso2=Function(acrescentador=18, fixo=20))[2]
@@ -40,16 +39,17 @@ def atividade2():
     ax.legend(["Encanador A", "Encanador B"])
     ax.set_title("Exercício 2")
 
-    atividadeLabel(label=label2,
-                    canvas=canvaDraw(figure=figure),
-                      dimension=[1, 0]
-                    )
+    atividadeLabel(canvas=canvaDraw(figure=figure), 
+                   dimension=[1, 0])
 
 def atividade3a():
-    label3 = Label(master=atividade, text="Atividade 3 a")
-    label3_atividade = Label(master=atividade, text="""
-    Até antes do 60km compensa a empresa A, depois disso compensa comprar da empresa B
-    """)
+    """
+    Gera o gráfico para o enunciado a seguir: "Um fabricante vende a unidade de certo produto por R$100,00.
+    O custo total consiste em uma taxa fixa de R$6.000,00 somada ao custo de produção de R$50,00 por
+    unidade.
+    
+    (a) Quantas unidades o fabricante precisa vender para atingir o ponto de equilíbrio?"
+    """
     x = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=100), caso2=Function(acrescentador=50, fixo=6000))[0]
     y1 = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=100), caso2=Function(acrescentador=50, fixo=6000))[1]
     y2 = equilibrioDeDuasFuncoes(caso1=Function(acrescentador=100), caso2=Function(acrescentador=50, fixo=6000))[2]
@@ -61,17 +61,17 @@ def atividade3a():
     ax.legend(["Receita", "Custo"])
     ax.set_title("Exercício 3 a)")
 
-    atividadeLabel(label=label3,
-                    canvas=canvaDraw(figure=figure),
-                      dimension=[0, 1]
-                    )
+    atividadeLabel(canvas=canvaDraw(figure=figure), 
+                   dimension=[0, 1])
     
 def atividade3b():
-    label4 = Label(master=atividade, text="Atividade 3 b")    
-    label4_atividade = Label(master=atividade, text="""
-    Até antes do 60km compensa a empresa A, depois disso compensa comprar da empresa B
-    """)
-
+    """
+    Gera o gráfico para o enunciado a seguir: "Um fabricante vende a unidade de certo produto por R$100,00.
+    O custo total consiste em uma taxa fixa de R$6.000,00 somada ao custo de produção de R$50,00 por
+    unidade.
+    
+    (b) Se forem vendidas 100 unidades, qual será o lucro ou o prejuízo do fabricante?
+    """
     x = calcularLucro(receita=Function(acrescentador=100), custo=Function(acrescentador=50, fixo=6000))[0]
     y1 = calcularLucro(receita=Function(acrescentador=100), custo=Function(acrescentador=50, fixo=6000))[1]
 
@@ -84,9 +84,7 @@ def atividade3b():
     ax.legend(["Agência A"])
     ax.set_title("Exercício 3 b)")
 
-    atividadeLabel(label=label4,
-                    canvas=canvaDraw(figure=figure),
-                      dimension=[1, 1]
-                    )
+    atividadeLabel(canvas=canvaDraw(figure=figure), 
+                   dimension=[1, 1])
 
     
